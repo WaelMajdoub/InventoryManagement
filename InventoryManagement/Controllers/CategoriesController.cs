@@ -10,7 +10,8 @@ using InventoryManagement.Models;
 
 namespace InventoryManagement.Controllers
 {
-    public class CategoriesController : Controller
+	[Authorize]
+	public class CategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
