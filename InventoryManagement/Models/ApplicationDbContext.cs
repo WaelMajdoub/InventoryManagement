@@ -6,7 +6,11 @@ namespace InventoryManagement.Models
 	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 	{
 		public DbSet<Category> Categories { get; set; }
-		private DbSet<Article> articles { get; set; }
+		public DbSet<Article> Articles { get; set; }
+		public DbSet<CustomerOrderLine> CustomerOrderLines { get; set; }
+		public DbSet<Customer> Customers { get; set; }
+		public DbSet<CustomerOrder> CustomerOrders { get; set; }
+
 		public ApplicationDbContext()
 			: base("DefaultConnection", throwIfV1Schema: false)
 		{
@@ -16,6 +20,5 @@ namespace InventoryManagement.Models
 		{
 			return new ApplicationDbContext();
 		}
-
 	}
 }

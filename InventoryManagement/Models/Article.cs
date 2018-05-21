@@ -9,9 +9,9 @@ namespace InventoryManagement.Models
 	{
 		public long Id { get; set; }
 
-		public string Code { get; set; }
-
 		public string Name { get; set; }
+
+		public string Code { get; set; }
 
 		public decimal UnitPriceExcludingTax { get; set; }
 
@@ -23,5 +23,6 @@ namespace InventoryManagement.Models
 
 		public long CategoryId { get; set; }
 		public Category Category { get; set; }
+		public ICollection<CustomerOrderLine> CustomerOrderLines { get; set; }
 	}
 }

@@ -5,11 +5,11 @@ using System.Web;
 
 namespace InventoryManagement.Models
 {
-	public class Category
+	public class Customer
 	{
 		public long Id { get; set; }
-		public string Name { get; set; }
-		public string Code { get; set; }
-		public ICollection<Article> Articles { get; set; }
+
+		public ApplicationUser User { get; set; }
+		public ICollection<CustomerOrder> CustomerOrders { get; set; }
 	}
 }

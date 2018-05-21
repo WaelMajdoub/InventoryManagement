@@ -10,8 +10,8 @@ using InventoryManagement.Models;
 
 namespace InventoryManagement.Controllers
 {
-	[Authorize]
-	public class CategoriesController : Controller
+		[Authorize]
+    public class CategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -47,7 +47,7 @@ namespace InventoryManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Code,Name")] Category category)
+        public ActionResult Create([Bind(Include = "Id,Name,Code")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace InventoryManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Code,Name")] Category category)
+        public ActionResult Edit([Bind(Include = "Id,Name,Code")] Category category)
         {
             if (ModelState.IsValid)
             {
