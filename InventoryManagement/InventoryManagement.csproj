@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,9 +200,48 @@
     <Compile Include="Migrations\201805201615182_InitialModel.Designer.cs">
       <DependentUpon>201805201615182_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805201623090_addCategoriesTable.cs" />
+    <Compile Include="Migrations\201805201623090_addCategoriesTable.Designer.cs">
+      <DependentUpon>201805201623090_addCategoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201639207_addArticlesTable.cs" />
+    <Compile Include="Migrations\201805201639207_addArticlesTable.Designer.cs">
+      <DependentUpon>201805201639207_addArticlesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201651038_addForeignKeyCategoryIdToArticlesTable.cs" />
+    <Compile Include="Migrations\201805201651038_addForeignKeyCategoryIdToArticlesTable.Designer.cs">
+      <DependentUpon>201805201651038_addForeignKeyCategoryIdToArticlesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201652552_removeforeignKey.cs" />
+    <Compile Include="Migrations\201805201652552_removeforeignKey.Designer.cs">
+      <DependentUpon>201805201652552_removeforeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201653384_addForeignKeyCategoryIdToArticlesTable2.cs" />
+    <Compile Include="Migrations\201805201653384_addForeignKeyCategoryIdToArticlesTable2.Designer.cs">
+      <DependentUpon>201805201653384_addForeignKeyCategoryIdToArticlesTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201702307_addNameToArticlesTable.cs" />
+    <Compile Include="Migrations\201805201702307_addNameToArticlesTable.Designer.cs">
+      <DependentUpon>201805201702307_addNameToArticlesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201703390_RenameDesignationToNameInCategoriesTable.cs" />
+    <Compile Include="Migrations\201805201703390_RenameDesignationToNameInCategoriesTable.Designer.cs">
+      <DependentUpon>201805201703390_RenameDesignationToNameInCategoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201704135_populateCategoriesTable.cs" />
+    <Compile Include="Migrations\201805201704135_populateCategoriesTable.Designer.cs">
+      <DependentUpon>201805201704135_populateCategoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201723154_AddManyToOneBetweenArticleAndCategory1.cs" />
+    <Compile Include="Migrations\201805201723154_AddManyToOneBetweenArticleAndCategory1.Designer.cs">
+      <DependentUpon>201805201723154_AddManyToOneBetweenArticleAndCategory1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -266,6 +306,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,6 +331,33 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805201615182_InitialModel.resx">
       <DependentUpon>201805201615182_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201623090_addCategoriesTable.resx">
+      <DependentUpon>201805201623090_addCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201639207_addArticlesTable.resx">
+      <DependentUpon>201805201639207_addArticlesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201651038_addForeignKeyCategoryIdToArticlesTable.resx">
+      <DependentUpon>201805201651038_addForeignKeyCategoryIdToArticlesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201652552_removeforeignKey.resx">
+      <DependentUpon>201805201652552_removeforeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201653384_addForeignKeyCategoryIdToArticlesTable2.resx">
+      <DependentUpon>201805201653384_addForeignKeyCategoryIdToArticlesTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201702307_addNameToArticlesTable.resx">
+      <DependentUpon>201805201702307_addNameToArticlesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201703390_RenameDesignationToNameInCategoriesTable.resx">
+      <DependentUpon>201805201703390_RenameDesignationToNameInCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201704135_populateCategoriesTable.resx">
+      <DependentUpon>201805201704135_populateCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201723154_AddManyToOneBetweenArticleAndCategory1.resx">
+      <DependentUpon>201805201723154_AddManyToOneBetweenArticleAndCategory1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
