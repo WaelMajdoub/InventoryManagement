@@ -191,6 +191,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CustomerOrderLinesController.cs" />
+    <Compile Include="Controllers\CustomerOrdersController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,6 +262,14 @@
     <Compile Include="Migrations\201805211948329_AddRelationshipBetweenArticleAndCustomerOrderLine.Designer.cs">
       <DependentUpon>201805211948329_AddRelationshipBetweenArticleAndCustomerOrderLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805212336111_test.cs" />
+    <Compile Include="Migrations\201805212336111_test.Designer.cs">
+      <DependentUpon>201805212336111_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805220002482_addtablePersons.cs" />
+    <Compile Include="Migrations\201805220002482_addtablePersons.Designer.cs">
+      <DependentUpon>201805220002482_addtablePersons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -269,6 +280,7 @@
     <Compile Include="Models\CustomerOrder.cs" />
     <Compile Include="Models\CustomerOrderLine.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -335,6 +347,21 @@
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\CustomerOrders\Create.cshtml" />
+    <Content Include="Views\CustomerOrders\Delete.cshtml" />
+    <Content Include="Views\CustomerOrders\Details.cshtml" />
+    <Content Include="Views\CustomerOrders\Edit.cshtml" />
+    <Content Include="Views\CustomerOrders\Index.cshtml" />
+    <Content Include="Views\CustomerOrderLines\Create.cshtml" />
+    <Content Include="Views\CustomerOrderLines\Delete.cshtml" />
+    <Content Include="Views\CustomerOrderLines\Details.cshtml" />
+    <Content Include="Views\CustomerOrderLines\Edit.cshtml" />
+    <Content Include="Views\CustomerOrderLines\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -400,6 +427,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805211948329_AddRelationshipBetweenArticleAndCustomerOrderLine.resx">
       <DependentUpon>201805211948329_AddRelationshipBetweenArticleAndCustomerOrderLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805212336111_test.resx">
+      <DependentUpon>201805212336111_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805220002482_addtablePersons.resx">
+      <DependentUpon>201805220002482_addtablePersons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace InventoryManagement.Models
 {
-	public class Customer
+	public class Customer : Person
 	{
-		public long Id { get; set; }
-
-		public ApplicationUser User { get; set; }
 		public ICollection<CustomerOrder> CustomerOrders { get; set; }
 	}
 }
